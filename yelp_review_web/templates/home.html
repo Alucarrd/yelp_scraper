@@ -1,0 +1,43 @@
+{%extends "layout.html"%}
+{%block content%}
+<div class="container">
+	{% if is_post: %}
+		{% if pizza_info.get('pizza_name'): %}
+		<div class="row bg-info">
+		<h2>{{ pizza_info.get('pizza_name') }}</h2>
+			{% if pizza_info.get('pizza_phone'): %}
+				<h3>Business Phone: {{ pizza_info.get('pizza_phone') }}</h3>
+			{% endif %}
+			<h3>Address: {{ pizza_info.get('pizza_address') }}</h3>
+			<h3>Average Score: {{ avg_score }} out of {{ review_size }} reviews.</h3>
+
+		</div>
+		{% endif %}
+		{% for review in review_list: %}
+			<div class="row bg-info">
+				<div class="col-md-4">
+					{{ loop.index }}. Name: {{ review.get('reviewer_name') }}
+					<br>
+					<img src="{{review.get('reviewer_image')}}" border="0">
+					<br>
+					Location: {{review.get('reviewer_location')}}
+				</div>
+				<div class="col-md-8">
+					Date: {{ review.get('review_date') }}
+					<br>
+					Rating: {{ review.get('reviewer_rating') }}
+					<br>
+					Comment:
+					<br>
+					{{ review.get('review_content')|safe }}
+				</div>
+			</div>
+		{% endfor %}
+		{% if review_size == 0 %}
+			<div class="row bg-info">
+				<p>No result returned for pizza restaurant: {{ name }}.</p>
+			</div>
+		{% endif %}
+	{% endif %}
+</div>
+{%endblock%}

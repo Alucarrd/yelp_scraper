@@ -1,0 +1,7 @@
+[
+  "yelp_review_web_test.py::test_make_searchable_name_standard",
+  "yelp_review_web_test.py::test_make_searchable_name_empty",
+  "yelp_review_web_test.py::test_get_avg_score_empty_list",
+  "yelp_review_web_test.py::test_get_avg_score_scores_list",
+  "yelp_review_web_test.py::test_get_search_result"
+]

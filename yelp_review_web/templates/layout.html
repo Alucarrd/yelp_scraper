@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	</head>
+	<body>
+	<style>
+		.row {
+			margin:10px;
+			padding:10px;
+		}
+	</style>
+		<div class="container">
+			<h2>New York Pizza Aggregator</h2>
+			<form  action="" method="post" role="form">
+				<div class="form-group">
+					<label for="name">New York Pizza Restaurant Name:</label>
+					<input type="text" class="form-control" id="name" name="name" value="{{ name }}" placeholder="Juliana’s Pizza" required>
+					<br>
+					<label for="count">Review Count:</label>
+					<input type="number" class="form-control" id="count" name="count"  value="{{ count }}" max="100" min="0" step="1" placeholder="10" data-bind="value:replyNumber" required>
+				</div>
+				<button type="submit" class="btn btn-success">Show Reviews</button>
+			</form>
+		</div>
+		<div class="container">
+		{%block content%}
+		{%endblock%}
+	</body>
+</html>
